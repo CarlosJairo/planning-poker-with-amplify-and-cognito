@@ -55,9 +55,13 @@
 
 @media (min-width: 1400px) {
   .m-table {
+    &::before,
     &::after {
-      width: 110%;
-      height: 120%;
+      border-radius: 12rem;
+    }
+    &::after {
+      width: 114%;
+      height: 121%;
     }
   }
 }
