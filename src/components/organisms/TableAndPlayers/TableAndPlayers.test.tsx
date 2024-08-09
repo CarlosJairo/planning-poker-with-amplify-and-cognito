@@ -22,7 +22,7 @@ const store = mockStore({
     id: "3",
     name: "Current User",
     voted: false,
-    rolCurrentUser: ["viewer"],
+    rolCurrentUser: ["viwer"],
   },
 });
 

@@ -100,11 +100,11 @@ const UserForm: React.FC<{
           </Label>
           <InputRadio
             name="rol"
-            value="viewer"
-            checked={rol === "viewer"}
-            onChange={() => setRol("viewer")}
+            value="viwer"
+            checked={rol === "viwer"}
+            onChange={() => setRol("viwer")}
           />
-          <Label htmlFor={"viewer"}>
+          <Label htmlFor={"viwer"}>
             Espectador
             <span className="o-user-form__radio-button"></span>
           </Label>
