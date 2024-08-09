@@ -1,19 +1,14 @@
-import React from "react";
 import { render, screen, fireEvent, act } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
-import thunk from "redux-thunk";
 import { MemoryRouter } from "react-router-dom";
 import CreateGameForm from "./CreateGameForm";
 import { setOwerRol } from "../../../reducers/user/userSlice";
-import { AppDispatch } from "../../../app/store";
 import "@testing-library/jest-dom";
 
-// Configura el mock store
-const mockStore = configureMockStore(thunk);
-const store = mockStore({
-  // Estado inicial para el slice 'user' si es necesario
-});
+// Configura el mock store sin thunk
+const mockStore = configureMockStore();
+const store = mockStore({});
 
 // Mock de useNavigate
 const mockNavigate = jest.fn();

@@ -1,16 +1,15 @@
 import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
-import thunk from "redux-thunk";
 import { MemoryRouter } from "react-router-dom";
 import CreateGameScreen from "./CreateGameScreen";
 import "@testing-library/jest-dom";
 
-// Configura el mock store
-const mockStore = configureMockStore(thunk);
+// Configura el mock store sin thunk
+const mockStore = configureMockStore();
 const store = mockStore({});
 
-// Mock de HeaderHome y CreateGameForm si es necesario
+// Mock de HeaderHome y CreateGameForm
 jest.mock("../../organisms/HeaderHome/HeaderHome", () => () => (
   <div>HeaderHome Mock</div>
 ));
@@ -28,6 +27,7 @@ describe("CreateGameScreen", () => {
       </Provider>
     );
 
+    // Verifica que el elemento con la clase 'create-game-screen' está presente
     const element = document.querySelector(".create-game-screen");
     expect(element).toBeInTheDocument();
   });

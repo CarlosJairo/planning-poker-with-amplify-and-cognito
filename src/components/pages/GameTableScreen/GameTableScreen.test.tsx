@@ -1,19 +1,12 @@
-import {
-  render,
-  screen,
-  fireEvent,
-  act,
-  waitFor,
-} from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
-import thunk from "redux-thunk";
 import { MemoryRouter } from "react-router-dom";
 import GameTableScreen from "./GameTableScreen";
 import "@testing-library/jest-dom";
 
-// Configura el mock store
-const mockStore = configureMockStore(thunk);
+// Configura el mock store sin thunk
+const mockStore = configureMockStore();
 const store = mockStore({
   game: {
     poolCards: [{ id: "1", str: "A", value: 1 }],
@@ -45,7 +38,6 @@ const store = mockStore({
 
 // Mocks para useModal
 const mockToggleModalUserForm = jest.fn();
-const mockToggleModalLink = jest.fn();
 jest.mock("../../../hooks/useModal", () => () => [
   false,
   mockToggleModalUserForm,
@@ -61,6 +53,7 @@ describe("GameTableScreen", () => {
       </Provider>
     );
 
+    // Verifica que el componente GameTableScreen se renderiza
     const tableAndPlayers = document.querySelector(".game-table-screen");
 
     expect(tableAndPlayers).toBeInTheDocument();

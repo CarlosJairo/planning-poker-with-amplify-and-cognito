@@ -1,17 +1,14 @@
 import { render, screen, fireEvent, act } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
-import thunk from "redux-thunk";
 import { MemoryRouter } from "react-router-dom";
-import { setCurrentUser } from "../../../reducers/user/userSlice";
-import { addPlayer, createGame } from "../../../reducers/game/gameSlice";
 import UserForm from "./FormUser";
 import "@testing-library/jest-dom";
 
-// Configura el mock store
-const mockStore = configureMockStore(thunk);
+// Configura el mock store sin thunk
+const mockStore = configureMockStore();
 const store = mockStore({
-  user: { rolCurrentUser: ["player"] }, // Estado inicial para el slice 'user'
+  user: { rolCurrentUser: ["player"] },
 });
 
 // Mock de useDispatch
@@ -20,7 +17,7 @@ jest.mock("react-redux", () => ({
   ...jest.requireActual("react-redux"),
   useDispatch: () => mockDispatch,
   useSelector: (selector: any) =>
-    selector({ user: { rolCurrentUser: ["player"] } }), // Mock de useSelector
+    selector({ user: { rolCurrentUser: ["player"] } }),
 }));
 
 // Mock de useNavigate

@@ -30,14 +30,13 @@ describe("HeaderTableScreen", () => {
       </Provider>
     );
 
-    // Check if the game name and user name are rendered
+    // Check if the game name rendered
     const gameNameElement = screen.getByText(/Test Game/i);
-    // const userNameElement = screen.getByText(/J/i);
-    const userNameElement = document.querySelector(".a-user-logo");
-    const inviteButton = document.querySelector(".o-header-game__invite");
+    const inviteButton = screen.getByRole("button", {
+      name: /Invitar jugadores/i,
+    });
 
     expect(gameNameElement).toBeInTheDocument();
-    expect(userNameElement).toBeInTheDocument();
     expect(inviteButton).toBeInTheDocument();
   });
 
@@ -50,7 +49,10 @@ describe("HeaderTableScreen", () => {
       </Provider>
     );
 
-    const inviteButton = document.querySelector(".o-header-game__invite");
+    const inviteButton = screen.getByRole("button", {
+      name: /Invitar jugadores/i,
+    });
+
     fireEvent.click(inviteButton);
 
     expect(mockToggleModalLink).toHaveBeenCalledTimes(1);

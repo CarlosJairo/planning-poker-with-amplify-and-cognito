@@ -1,14 +1,13 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
-import thunk from "redux-thunk";
-import SelectableCardContainer from "./SelectableCardContainer";
 import { selectCard, everyoneVoted } from "../../../reducers/game/gameSlice";
 import { voteCard } from "../../../reducers/user/userSlice";
+import SelectableCardContainer from "./SelectableCardContainer";
 import "@testing-library/jest-dom";
 
-// Configuración del store mock
-const mockStore = configureMockStore(thunk);
+// Configura el mock store sin thunk
+const mockStore = configureMockStore();
 
 describe("SelectableCardContainer", () => {
   let store: any;
@@ -38,7 +37,7 @@ describe("SelectableCardContainer", () => {
     expect(screen.getByText(/2/i)).toBeInTheDocument();
   });
 
-  test("should disable cards after a card is selected", () => {
+  test("should dispatch actions when a card is selected", () => {
     render(
       <Provider store={store}>
         <SelectableCardContainer poolCards={store.getState().game.poolCards} />
