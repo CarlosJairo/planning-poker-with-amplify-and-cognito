@@ -10,7 +10,6 @@
   grid-template-rows: repeat(5, auto);
   gap: 0.4rem 0;
   width: 90%;
-  max-width: 300px;
   height: 90%;
   padding-top: 5rem;
   margin: auto;
@@ -88,7 +87,7 @@
       "user5 user6 user0 user1 user2"
       "user5 tableLocker tableLocker tableLocker user2"
       "user5 user4 currentUser user3 user2";
-    max-width: 700px;
+    max-width: 60vw;
   }
 
   .table-locker {

@@ -25,6 +25,7 @@ const SelectableCardContainer: React.FC<SelectableCardContainerProps> = ({
 
   const dispatch = useDispatch();
   const isViwer = rolCurrentUser.includes("viwer");
+  console.log(isViwer);
 
   const sendCard = (card: CardType) => {
     dispatch(selectCard({ card, id }));
