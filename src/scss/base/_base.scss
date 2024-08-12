@@ -1,3 +1,11 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+}
+
 body {
   color: #ffffff;
   background: radial-gradient(50% 50% at 50% 50%, #330072 0%, rgb(31, 13, 63));
