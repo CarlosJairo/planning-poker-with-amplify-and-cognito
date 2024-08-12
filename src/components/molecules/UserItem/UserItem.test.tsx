@@ -12,13 +12,6 @@ describe("UserItem", () => {
     rol: ["viwer"],
   };
 
-  const userNotOwner = {
-    id: "3",
-    name: "Alice Doe",
-    voted: false,
-    rol: [],
-  };
-
   test("should render UserLogo when user is a viewer", () => {
     render(
       <Provider store={store}>

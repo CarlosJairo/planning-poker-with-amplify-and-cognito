@@ -1,12 +1,12 @@
 import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
-import configureMockStore from "redux-mock-store";
+import configureStore from "redux-mock-store";
 import { MemoryRouter } from "react-router-dom";
 import GameTableScreen from "./GameTableScreen";
 import "@testing-library/jest-dom";
 
 // Configura el mock store sin thunk
-const mockStore = configureMockStore();
+const mockStore = configureStore();
 const store = mockStore({
   game: {
     poolCards: [{ id: "1", str: "A", value: 1 }],

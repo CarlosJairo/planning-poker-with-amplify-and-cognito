@@ -14,6 +14,7 @@
   "dependencies": {
     "@aws-amplify/ui-react": "^6.1.14",
     "@reduxjs/toolkit": "^2.2.7",
+    "@types/redux-mock-store": "^1.0.6",
     "aws-amplify": "^6.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
