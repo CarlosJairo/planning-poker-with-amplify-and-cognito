@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+# Planning Poker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una implementación de **Planning Poker**, una herramienta utilizada para la estimación ágil en el desarrollo de software. Es una aplicación **frontend** desarrollada utilizando **React**, **TypeScript**, y **AWS Amplify** para la gestión de autenticación con **Cognito**. Además, se realizan pruebas con **Jest** para garantizar la calidad del código.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **TypeScript**: Desarrollo tipado que mejora la mantenibilidad y escalabilidad del proyecto.
+- **Routing**: Uso de `react-router-dom` para la navegación en la aplicación.
+- **AWS Amplify**: Configuración de la autenticación mediante Cognito para gestionar usuarios de forma segura.
+- **Componentización**: Uso de patrones como Atomic Design para componentes reutilizables.
+- **Splash Screen**: Pantalla inicial que da la bienvenida antes de la interfaz principal.
+- **Testing con Jest**: Aseguramiento de calidad con pruebas unitarias para funciones y componentes.
+- **Pantallas principales**:
+  - **SplashScreen**: Pantalla inicial con animación.
+  - **CreateGameScreen**: Permite a los usuarios crear una sala de juego.
+  - **GameTableScreen**: Muestra la mesa de juego donde los usuarios participan.
 
-## Expanding the ESLint configuration
+## Tecnologías utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: Librería para construir la interfaz de usuario.
+- **TypeScript**: Superset de JavaScript que permite un desarrollo robusto y seguro.
+- **Jest**: Framework de pruebas para componentes y funciones.
+- **AWS Amplify**: Para gestionar la autenticación con Cognito y configuración de la nube.
+- **React Router**: Para manejar rutas y navegación.
+- **SCSS**: Estilización de la aplicación.
 
-- Configure the top-level `parserOptions` property like this:
+## Instalación
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Clonar este repositorio:
+   ```bash
+   git clone https://github.com/usuario/planning-poker.git
+   cd planning-poker
