@@ -24,9 +24,6 @@ Este proyecto es una implementación de **Planning Poker**, una herramienta util
 - **React Router**: Para manejar rutas y navegación.
 - **SCSS**: Estilización de la aplicación.
 
-## Instalación
+## ¡Echa un vistazo al proyecto!
 
-1. Clonar este repositorio:
-   ```bash
-   git clone https://github.com/usuario/planning-poker.git
-   cd planning-poker
+- [Ver proyecto desplegado](https://dvdpnus2o8s5n.cloudfront.net/)
